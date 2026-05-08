@@ -39,14 +39,13 @@
     <ul class="filter-list">
       <li><a href="#" class="active" onclick="filterCards('all',this)">All Releases</a></li>
       <li><a href="#" onclick="filterCards('platform',this)">SecureOne Platform</a></li>
-      <li><a href="#" onclick="filterCards('agents',this)">Scan Agents</a></li>
     </ul>
   </aside>
 
   <!-- Main releases -->
   <main class="releases-main">
     <h1>SecureOne Releases</h1>
-    <p class="subtitle">Latest builds for the SecureOne Platform and Scan Agents.</p>
+    <p class="subtitle">Docker container releases. Binary downloads coming soon.</p>
 
     <!-- ═══════════════════════════════════════════
          RELEASE 1 — Platform v1.2.0
@@ -98,100 +97,6 @@
               <li>New <code>app/routers/license_lead_info.py</code> with <code>_render_page()</code> helper, <code>action</code>-based POST dispatch, dual protected + public router registration.</li>
               <li>New RBAC resources: <code>ADMIN_SETTINGS_LICENSE_LEAD_INFO</code> and <code>ADMIN_SETTINGS_LICENSE_LEAD_INFO_SUBMIT</code>.</li>
               <li><code>app/core/licensing.py</code>: Added <code>_normalize_license_request_payload()</code>, <code>_normalize_deployment_type()</code>, default URL fallback chain.</li>
-            </ul>
-          </div>
-        </details>
-
-        <p class="eula-note">
-          Usage of this software is subject to the <a href="https://bountybreach.github.io/legal.html">license agreement</a>.
-        </p>
-      </div>
-    </article>
-
-    <!-- ═══════════════════════════════════════════
-         RELEASE 2 — Scan Agents v1.1.0
-    ════════════════════════════════════════════ -->
-    <article class="release-card" data-product="agents">
-      <div class="release-header">
-        <span class="release-title">SecureOne Scan Agents v1.1.0</span>
-        <span class="badge badge-stable">Stable</span>
-        <span class="badge badge-agents">Scan Agents</span>
-        <span class="release-meta">Released Monday, 28 April 2026</span>
-        <div class="release-actions">
-          <a class="btn btn-download" href="#">DOWNLOAD</a>
-          <span class="checksum-link">view checksums</span>
-        </div>
-      </div>
-      <div class="release-body">
-        <p>
-          This release ships macOS and Linux binary packages for the SecureOne Scan Agent, adds packaging
-          automation scripts, and extends CI/CD workspace scanning support.
-        </p>
-
-        <details>
-          <summary>Show full release notes</summary>
-          <div class="detail-body">
-            <h3>New Features</h3>
-            <ul>
-              <li>macOS and Linux binary release packages via <code>package-local.sh</code> and <code>build-local.sh</code>.</li>
-              <li>CI/CD workspace scan agent (<code>cicd_workspace_scan_agent.py</code>) for full workspace-level pipeline scans.</li>
-              <li>Factory scan agent (<code>factory_scan_agent.py</code>) for scalable agent provisioning.</li>
-              <li>Config manager (<code>config_manager.py</code>) with YAML-based configuration for multi-environment deployments.</li>
-              <li>Dual-form Request License + Activate Token UI in agent config template (<code>templates/config_update.html</code>).</li>
-            </ul>
-
-            <h3>Scan Tool Support</h3>
-            <ul>
-              <li>SAST: Semgrep (<code>commands/sast/semgrep.py</code>), OpenGrep (<code>commands/sast/opengrep.py</code>).</li>
-              <li>SCA: Snyk (<code>commands/sca/snyk.py</code>), CodeQL (<code>commands/sca/codeql.py</code>).</li>
-              <li>Secrets: Gitleaks (<code>commands/secret/gitleaks.py</code>), TruffleHog (<code>commands/secret/trufflehog.py</code>).</li>
-              <li>DAST: ZAP (<code>commands/dast/zap.py</code>), Burp (<code>commands/dast/burp.py</code>).</li>
-            </ul>
-
-            <h3>Platforms</h3>
-            <ul>
-              <li>macOS (Apple Silicon &amp; Intel) — <code>release-local/secureone-scan-agents-mac-*</code></li>
-              <li>Linux x86_64 — <code>release-local/secureone-scan-agents-linux-*</code></li>
-            </ul>
-          </div>
-        </details>
-
-        <p class="eula-note">
-          Usage of this software is subject to the <a href="https://bountybreach.github.io/legal.html">license agreement</a>.
-        </p>
-      </div>
-    </article>
-
-    <!-- ═══════════════════════════════════════════
-         RELEASE 4 — Platform v1.1.0 (older)
-    ════════════════════════════════════════════ -->
-    <article class="release-card" data-product="platform">
-      <div class="release-header">
-        <span class="release-title">SecureOne Platform v1.1.0</span>
-        <span class="badge badge-stable">Stable</span>
-        <span class="badge badge-platform">Platform</span>
-        <span class="release-meta">Released Friday, 18 April 2026</span>
-        <div class="release-actions">
-          <a class="btn btn-download" href="#">DOWNLOAD</a>
-          <span class="checksum-link">view checksums</span>
-        </div>
-      </div>
-      <div class="release-body">
-        <p>
-          This release adds Jenkins CI/CD pipeline integration, policy-driven scan gates, and scan agent
-          token-based registration with UUID management.
-        </p>
-
-        <details>
-          <summary>Show full release notes</summary>
-          <div class="detail-body">
-            <h3>New Features</h3>
-            <ul>
-              <li>Jenkins CI/CD integration: pipeline script, scan execution entries, policy threshold configuration.</li>
-              <li>Scan agent registration with unique UUID, registration token, upload token, and heartbeat token.</li>
-              <li>Policy-driven gate control: fail builds on critical findings or allow continuation.</li>
-              <li>Pull request and commit-level scanning for GitHub repositories.</li>
-              <li>Pen test request submission directly from the platform dashboard.</li>
             </ul>
           </div>
         </details>
