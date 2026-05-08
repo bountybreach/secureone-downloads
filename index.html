@@ -40,14 +40,13 @@
       <li><a href="#" class="active" onclick="filterCards('all',this)">All Releases</a></li>
       <li><a href="#" onclick="filterCards('platform',this)">SecureOne Platform</a></li>
       <li><a href="#" onclick="filterCards('agents',this)">Scan Agents</a></li>
-      <li><a href="#" onclick="filterCards('licensing',this)">Licensing Platform</a></li>
     </ul>
   </aside>
 
   <!-- Main releases -->
   <main class="releases-main">
     <h1>SecureOne Releases</h1>
-    <p class="subtitle">Latest builds for the SecureOne Platform, Scan Agents, and Licensing Platform.</p>
+    <p class="subtitle">Latest builds for the SecureOne Platform and Scan Agents.</p>
 
     <!-- ═══════════════════════════════════════════
          RELEASE 1 — Platform v1.2.0
@@ -153,59 +152,6 @@
             <ul>
               <li>macOS (Apple Silicon &amp; Intel) — <code>release-local/secureone-scan-agents-mac-*</code></li>
               <li>Linux x86_64 — <code>release-local/secureone-scan-agents-linux-*</code></li>
-            </ul>
-          </div>
-        </details>
-
-        <p class="eula-note">
-          Usage of this software is subject to the <a href="https://bountybreach.github.io/legal.html">license agreement</a>.
-        </p>
-      </div>
-    </article>
-
-    <!-- ═══════════════════════════════════════════
-         RELEASE 3 — Licensing Platform v1.0.0
-    ════════════════════════════════════════════ -->
-    <article class="release-card" data-product="licensing">
-      <div class="release-header">
-        <span class="release-title">SecureOne Licensing Platform v1.0.0</span>
-        <span class="badge badge-stable">Stable</span>
-        <span class="badge badge-licensing">Licensing</span>
-        <span class="release-meta">Released Monday, 4 May 2026</span>
-        <div class="release-actions">
-          <a class="btn btn-download" href="#">DOWNLOAD</a>
-          <span class="checksum-link">view checksums</span>
-        </div>
-      </div>
-      <div class="release-body">
-        <p>
-          Initial stable release of the SecureOne Licensing Platform — the backend service that handles
-          license issuance, validation, public key distribution, and lead capture for on-premise deployments.
-        </p>
-
-        <details>
-          <summary>Show full release notes</summary>
-          <div class="detail-body">
-            <h3>API Endpoints</h3>
-            <ul>
-              <li><code>POST /api/v1/license-requests</code> — Submit a license lead request (org info, deployment type, usage metrics).</li>
-              <li><code>GET /api/v1/licenses/public-key</code> — Retrieve the RSA public key for token verification.</li>
-              <li><code>POST /api/v1/licenses/validate</code> — Validate a license JWT token.</li>
-            </ul>
-
-            <h3>Features</h3>
-            <ul>
-              <li>RS256 JWT license token issuance and validation.</li>
-              <li>Deployment type support: <code>onprem</code> and <code>saas</code>.</li>
-              <li>Lead capture with industry, organization, contact details, and usage metrics.</li>
-              <li>Public key endpoint for client-side verification without server round-trip.</li>
-              <li>Configurable sync interval for client-side license refresh.</li>
-            </ul>
-
-            <h3>Deployment</h3>
-            <ul>
-              <li>Runs on port <code>9001</code> by default.</li>
-              <li>Compatible with SecureOne Platform v1.2.0+ and Scan Agents v1.1.0+.</li>
             </ul>
           </div>
         </details>
